@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { usePostsStore } from '../../store/posts';
 import { useUserStore } from '../../store/user';
+import defaultAvatar from '../../../assets/icons/default_avatar.png';
 import './index.css';
 
 type CommentsProps = { postId: number };
@@ -46,8 +47,17 @@ function CommentsWidget({ postId }: CommentsProps) {
           <div key={comment.id} className="commentItem">
             <div className="commentContent">
               <div className="commentHeader">
-                <div className="commentAvatar" />
-                <span className="commentAuthor">{comment.author.name}</span>
+                <img
+                  className="authorAvatar"
+                  src={ comment.author.avatar?.thumbnail?.trim()
+                      ? comment.author.avatar.thumbnail
+                      : defaultAvatar}
+                  alt={`Аватар ${comment.author.name}`}
+                  loading="lazy"
+                />
+                <span className="commentAuthor">{
+                  comment.author.name
+                  }</span>
                 <span className="commentTime">{comment.timestamp}</span>
               </div>
               <div className="commentText">{comment.content}</div>

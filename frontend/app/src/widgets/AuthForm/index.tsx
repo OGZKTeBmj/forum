@@ -38,7 +38,7 @@ const AuthForm: React.FC = () => {
     } catch (err: any) {
       let errorMessage = err?.response?.data?.message || 'Произошла ошибка';
       if (errorMessage === "invalid credentails") {
-        errorMessage = "неверные имя или парол"
+        errorMessage = "неверные имя или пароль"
       }
       setError(errorMessage);
     } finally {
