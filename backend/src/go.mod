@@ -1,4 +1,4 @@
-module github.com/HAHLIK/image-board
+module github.com/OGZKTeBmj/forum
 
 go 1.23.0
 
