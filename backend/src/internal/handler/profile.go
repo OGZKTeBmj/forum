@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/HAHLIK/image-board/internal/service"
-	"github.com/HAHLIK/image-board/utils"
+	"github.com/OGZKTeBmj/forum/internal/service"
+	"github.com/OGZKTeBmj/forum/utils"
 	"github.com/gin-gonic/gin"
 )
 

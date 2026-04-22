@@ -4,8 +4,8 @@ import (
 	"context"
 	"log/slog"
 
-	models "github.com/HAHLIK/image-board/domain"
-	"github.com/HAHLIK/image-board/utils"
+	models "github.com/OGZKTeBmj/forum/domain"
+	"github.com/OGZKTeBmj/forum/utils"
 )
 
 type PostsService struct {

@@ -11,10 +11,11 @@
   max-width: 1100px;
   margin: 0 auto;
   min-height: 70px;
-  padding: 0 1rem;
+  padding: 0 0;
+
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .profileHeader {
@@ -101,6 +102,13 @@
   transform: translateY(0);
 }
 
+.headerLogo {
+  width: 176px;
+  height: 53px;
+  margin-left: -6rem;
+  object-fit: contain;
+  cursor: pointer;
+}
 
 .authModal {
   position: fixed;

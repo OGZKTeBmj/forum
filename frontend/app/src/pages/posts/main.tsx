@@ -15,7 +15,6 @@ export default function MainPage() {
   const deleteVoteRequest = usePostsStore(state => state.deleteVoteRequest)
 
   const vote = (postId: number, value: number) => {
-
     if (value === 0) deleteVoteRequest(postId)
     else voteRequest(postId, value)
   }

@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/HAHLIK/image-board/utils"
+	"github.com/OGZKTeBmj/forum/utils"
 )
 
 type Controller interface {

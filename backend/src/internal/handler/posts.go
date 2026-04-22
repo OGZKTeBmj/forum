@@ -5,11 +5,10 @@ import (
 	"net/http"
 	"strconv"
 
-	models "github.com/HAHLIK/image-board/domain"
-	"github.com/HAHLIK/image-board/internal/service"
-	"github.com/HAHLIK/image-board/internal/storage"
-	"github.com/HAHLIK/image-board/utils"
-
+	models "github.com/OGZKTeBmj/forum/domain"
+	"github.com/OGZKTeBmj/forum/internal/service"
+	"github.com/OGZKTeBmj/forum/internal/storage"
+	"github.com/OGZKTeBmj/forum/utils"
 	"github.com/gin-gonic/gin"
 )
 

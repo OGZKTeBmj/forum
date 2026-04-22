@@ -7,14 +7,14 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/HAHLIK/image-board/internal/app"
-	"github.com/HAHLIK/image-board/internal/config"
-	"github.com/HAHLIK/image-board/internal/handler"
-	"github.com/HAHLIK/image-board/internal/service"
-	"github.com/HAHLIK/image-board/internal/storage/postgres"
-	"github.com/HAHLIK/image-board/internal/storage/s3storage"
-	"github.com/HAHLIK/image-board/utils"
-	"github.com/HAHLIK/image-board/utils/flagandenv"
+	"github.com/OGZKTeBmj/forum/internal/app"
+	"github.com/OGZKTeBmj/forum/internal/config"
+	"github.com/OGZKTeBmj/forum/internal/handler"
+	"github.com/OGZKTeBmj/forum/internal/service"
+	"github.com/OGZKTeBmj/forum/internal/storage/postgres"
+	"github.com/OGZKTeBmj/forum/internal/storage/s3storage"
+	"github.com/OGZKTeBmj/forum/utils"
+	"github.com/OGZKTeBmj/forum/utils/flagandenv"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	models "github.com/HAHLIK/image-board/domain"
-	"github.com/HAHLIK/image-board/utils"
+	models "github.com/OGZKTeBmj/forum/domain"
+	"github.com/OGZKTeBmj/forum/utils"
 	"github.com/jackc/pgx/v5"
 )
 

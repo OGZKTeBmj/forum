@@ -14,8 +14,8 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 
-	models "github.com/HAHLIK/image-board/domain"
-	"github.com/HAHLIK/image-board/utils"
+	models "github.com/OGZKTeBmj/forum/domain"
+	"github.com/OGZKTeBmj/forum/utils"
 	"github.com/disintegration/imaging"
 )
 

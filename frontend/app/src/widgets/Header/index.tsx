@@ -3,6 +3,7 @@ import './index.css';
 import AuthForm from '../../widgets/AuthForm';
 import { useUserStore } from '../../store/user';
 import defaultAvatar from '../../../assets/icons/default_avatar.png';
+import headerLogo from '../../../assets/icons/header_logo.png';
 
 const ALLOWED_TYPES = [
   'image/png',
@@ -98,6 +99,15 @@ const Header: React.FC = () => {
   return (
     <header className="mainHeader">
       <div className="headerContent">
+        {/* Logo */}
+        <img
+          src={headerLogo}
+          alt="logo"
+          className="headerLogo"
+          width={176}
+          height={53}
+        />
+
         {isAuth ? (
           <div className="profileHeader">
             <span className="profileName">{userName}</span>

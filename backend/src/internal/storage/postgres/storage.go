@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/HAHLIK/image-board/utils"
+	"github.com/OGZKTeBmj/forum/utils"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
