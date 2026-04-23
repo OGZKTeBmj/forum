@@ -236,10 +236,55 @@
   font-size: 14px;
   text-align: center;
 }
+@media (max-width: 1450px) {
+  .headerLogo {
+    margin-left: 1rem;
+  }
+
+}
 
 @media (max-width: 768px) {
+  .headerContent {
+    padding: 0 0.5rem;
+  }
+
+  .headerLogo {
+    width: 120px;
+    margin-left: 0;
+  }
+
+  .createPostBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profileAvatar {
+    width: 38px;
+    height: 38px;
+  }
+
   .avatarLarge {
     width: 200px;
     height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerLogo {
+    width: 100px;
+  }
+
+  .profileHeader {
+    gap: 0.5rem;
+  }
+
+  .createPostBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profileAvatar {
+    width: 34px;
+    height: 34px;
   }
 }
