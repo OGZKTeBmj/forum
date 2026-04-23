@@ -192,7 +192,7 @@ func (h *Handler) saveComment(ctx *gin.Context) {
 }
 
 func (h *Handler) vote(ctx *gin.Context) {
-	const op = "handler.rating"
+	const op = "handler.vote"
 	log := h.log.With("op", op)
 
 	postIdStr := ctx.Param("post_id")
@@ -244,6 +244,27 @@ func (h *Handler) deleteVote(ctx *gin.Context) {
 	if err != nil {
 		log.Error("can't delete vote", utils.SlogErr(err))
 		ctx.Status(http.StatusInternalServerError)
+	}
+
+	ctx.Status(http.StatusOK)
+}
+
+func (h *Handler) deletePost(ctx *gin.Context) {
+	const op = "handler.rating"
+	log := h.log.With("op", op)
+
+	postIdStr := ctx.Param("post_id")
+	postId, err := strconv.ParseInt(postIdStr, 10, 64)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "invalid post id"})
+		return
+	}
+
+	err = h.postsService.DeletePost(ctx.Request.Context(), postId)
+	if err != nil {
+		log.Error("can't delete post", utils.SlogErr(err))
+		ctx.Status(http.StatusInternalServerError)
+		return
 	}
 
 	ctx.Status(http.StatusOK)

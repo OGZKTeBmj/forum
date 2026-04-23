@@ -21,6 +21,7 @@ type PostProvider interface {
 	Vote(ctx context.Context, vote models.Vote) error
 	DeleteVote(ctx context.Context, vote models.Vote) error
 	GetVote(ctx context.Context, authorId []byte, postId int64) (vote models.Vote, err error)
+	DeletePost(ctx context.Context, postId int64) error
 }
 
 func (p *PostsService) GetPostsBatch(ctx context.Context, offset int64, limit int64) (models.Posts, error) {
@@ -119,4 +120,17 @@ func (p *PostsService) GetVote(ctx context.Context, authorId []byte, postId int6
 		return vote, utils.ErrWrap(op, err)
 	}
 	return vote, nil
+}
+
+func (p *PostsService) DeletePost(ctx context.Context, postId int64) error {
+	const op = "postsService.DeletePost"
+
+	log := p.Log.With("op", op)
+
+	err := p.Provider.DeletePost(ctx, postId)
+	if err != nil {
+		log.Error("Failed delete post", utils.SlogErr(err))
+		return utils.ErrWrap(op, err)
+	}
+	return err
 }

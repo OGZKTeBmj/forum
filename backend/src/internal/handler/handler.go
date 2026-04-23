@@ -40,6 +40,7 @@ type PostsService interface {
 	Vote(ctx context.Context, vote models.Vote) error
 	DeleteVote(ctx context.Context, vote models.Vote) error
 	GetVote(ctx context.Context, authorId []byte, postId int64) (vote models.Vote, err error)
+	DeletePost(ctx context.Context, postId int64) error
 }
 
 type ImageService interface {
@@ -66,6 +67,8 @@ func (h *Handler) Init() {
 
 			ac := posts.Group("/:post_id")
 			{
+				ac.DELETE("/delete", h.deletePost)
+
 				ac.PUT("/vote", h.userIdentity, h.vote)
 				ac.DELETE("/vote", h.userIdentity, h.deleteVote)
 

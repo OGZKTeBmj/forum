@@ -118,6 +118,15 @@ func (s *Storage) GetVote(ctx context.Context, authorId []byte, postId int64) (v
 	return vote, nil
 }
 
+func (s *Storage) DeletePost(ctx context.Context, postId int64) error {
+	const op = "postgres.DeletePost"
+
+	if _, err := s.db.Exec(ctx, QueryDeletePost, postId); err != nil {
+		return utils.ErrWrap(op, err)
+	}
+	return nil
+}
+
 const (
 	QuerySavePost = `
 	INSERT INTO posts (title, content, author_id, time_stamp)
@@ -174,5 +183,10 @@ const (
 	SELECT post_id, author_id, value
 	FROM votes
 	WHERE post_id = $1 AND author_id = $2
+	`
+
+	QueryDeletePost = `
+	DELETE FROM posts
+    WHERE id = $1
 	`
 )
